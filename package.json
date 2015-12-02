@@ -1,0 +1,24 @@
+{
+  "name": "satismeter-js",
+  "version": "1.0.0",
+  "description": "Javascript client for SatisMeter API",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satismeter/satismeter-js.git"
+  },
+  "keywords": [
+    "satismeter",
+    "nps",
+    "api"
+  ],
+  "author": "Jakub Sedlacek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satismeter/satismeter-js/issues"
+  },
+  "homepage": "https://github.com/satismeter/satismeter-js#readme"
+}
