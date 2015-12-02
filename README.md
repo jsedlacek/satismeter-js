@@ -34,8 +34,8 @@ var traits = {
   createdAt: '2015-01-02T00:00:00.000Z'  
 };
 
-client.identify({userId: userId, traits: traits}, function(err, {visible}) {
-  if (visible) {
+client.identify({userId: userId, traits: traits}, function(err, options) {
+  if (options.visible) {
     // visible flag says if the survey should be shown
     widget.show();
   }
