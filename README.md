@@ -36,7 +36,7 @@ client.identify(userId, traits, function(err, {visible}) {
   }
 });
 
-// step 4 - show handle submit and dismiss events
+// step 4 - handle submit and dismiss events
 var response = client.createResponse(userId, traits);
 
 widget.on('submit', function() {
