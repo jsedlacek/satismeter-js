@@ -1,3 +1,5 @@
+Note: This is work in progress.
+
 # satismeter-js
 Javascript library for SatisMeter API
 
