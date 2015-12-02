@@ -32,7 +32,7 @@ var traits = {
   createdAt: '2015-01-02T00:00:00.000Z'  
 };
 
-client.identify(userId, traits, function(err, {visible}) {
+client.identify({userId: userId, traits: traits}, function(err, {visible}) {
   if (visible) {
     // visible flag says if the survey should be shown
     widget.show();
@@ -42,7 +42,7 @@ client.identify(userId, traits, function(err, {visible}) {
 
 Handle submit and dismiss events
 ```js
-var response = client.createResponse(userId, traits);
+var response = client.createResponse({userId: userId, traits: traits});
 
 widget.on('submit', function() {
   response.rating = widget.rating;
