@@ -27,11 +27,19 @@
     "nps-widget": "satismeter/nps-widget"
   },
   "dependencies": {
-    "babelify": "^7.2.0"
+    "babelify": "^7.2.0",
+    "superagent": "^1.4.0"
   },
   "browserify": {
     "transform": [
-      ["babelify", {"presets": ["es2015"]}]
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
     ]
   }
 }

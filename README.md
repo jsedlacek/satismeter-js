@@ -12,12 +12,18 @@ npm install satismeter/nps-widget
 
 ## Quick start
 
-Configure satismeter client with your write key
+Configure satismeter client with your write key and user identity
 ```js
 var satismeter = require('satismeter-js');
 
 var client = satismeter({
-  writeKey: 'ABCD'
+  writeKey: 'ABCD',
+  userId: '007',
+  traits: {
+    name: 'James Bond',
+    email: 'james.bond@gov.uk',
+    createdAt: '1953-01-01T00:00:00.000Z'
+  }
 });
 ```
 Create widget
@@ -26,15 +32,9 @@ var Widget = require('nps-widget');
 var widget = new Widget();
 ```
 
-Identify user and show widget
+Get information about survey
 ```js
-var userId = '007';
-var traits = {
-  email: 'james.bond@gov.uk',
-  createdAt: '2015-01-02T00:00:00.000Z'  
-};
-
-client.identify({userId: userId, traits: traits}, function(err, options) {
+client.survey(function(err, options) {
   if (options.visible) {
     // visible flag says if the survey should be shown
     widget.show();

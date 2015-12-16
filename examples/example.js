@@ -1,26 +1,28 @@
 var satismeter = require('..');
 
 var client = satismeter({
-  writeKey: 'ABCD'
+  writeKey: 'e149fH_6i',
+  server: 'http://localhost:5000',
+  userId: '011',
+  traits: {
+    email: 'james.bond@gov.uk',
+    name: 'James Bond',
+    createdAt: '2015-01-02T00:00:00.000Z'
+  },
+  referrer: window.location.href
 });
 
 var Widget = require('nps-widget');
 var widget = new Widget();
 
-var userId = '007';
-var traits = {
-  email: 'james.bond@gov.uk',
-  createdAt: '2015-01-02T00:00:00.000Z'
-};
-
-client.identify({userId, traits}, function(err, {visible}) {
+client.survey(function(err, {visible}) {
   if (visible) {
     // visible flag says if the survey should be shown
     widget.show();
   }
 });
 
-var response = client.createResponse({userId, traits});
+var response = client.createResponse();
 
 widget.on('submit', function() {
   response.rating = widget.rating;
