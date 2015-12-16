@@ -73,7 +73,8 @@ class Response {
       trackAnonymous: this.client.trackAnonymous,
       referrer: this.client.referrer,
       rating: this.rating,
-      feedback: this.feedback
+      feedback: this.feedback,
+      dismissed: this.dismissed
     };
 
     if (this.saving) {
