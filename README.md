@@ -44,7 +44,7 @@ client.survey(function(err, options) {
 
 Handle submit and dismiss events
 ```js
-var response = client.createResponse({userId: userId, traits: traits});
+var response = client.createResponse();
 
 widget.on('submit', function() {
   response.rating = widget.rating;
