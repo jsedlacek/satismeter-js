@@ -12,30 +12,32 @@ npm install satismeter/nps-widget
 
 ## Quick start
 
-Configure satismeter client with your write key and user identity
+Configure SatisMeter client with your write key
 ```js
 var satismeter = require('satismeter-js');
 
 var client = satismeter({
-  writeKey: 'ABCD',
-  userId: '007',
-  traits: {
-    name: 'James Bond',
-    email: 'james.bond@gov.uk',
-    createdAt: '1953-01-01T00:00:00.000Z'
-  }
+  writeKey: 'ABCD'
 });
 ```
+
 Create widget
 ```js
 var Widget = require('nps-widget');
 var widget = new Widget();
 ```
 
-Get information about survey
+Identify user and get information about survey
 ```js
-client.survey(function(err, options) {
-  if (options.visible) {
+satismeter.survey({
+  userId: '007',
+  traits: {
+    name: 'James Bond',
+    email: 'james.bond@gov.uk',
+    createdAt: '1953-01-01T00:00:00.000Z'
+  }
+}), function(err, survey) {
+  if (survey.visible) {
     // visible flag says if the survey should be shown
     widget.show();
   }
@@ -44,16 +46,15 @@ client.survey(function(err, options) {
 
 Handle submit and dismiss events
 ```js
-var response = client.createResponse();
 
 widget.on('submit', function() {
-  response.rating = widget.rating;
-  response.feedback = widget.feedback;
-  response.save();
+  survey.rating = widget.rating;
+  survey.feedback = widget.feedback;
+  survey.save();
 });
 
 widget.on('dismiss', function() {
-  response.dismissed = true;
-  response.save();
+  survey.dismissed = true;
+  survey.save();
 });
 ```
