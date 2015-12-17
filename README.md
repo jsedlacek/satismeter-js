@@ -21,7 +21,7 @@ var client = satismeter({
 });
 ```
 
-Create widget
+Create a survey widget
 ```js
 var Widget = require('nps-widget');
 var widget = new Widget();
