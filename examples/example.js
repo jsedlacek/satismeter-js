@@ -1,8 +1,7 @@
 var satismeter = require('..');
 
 var client = satismeter({
-  writeKey: 'e149fH_6i',
-  server: 'http://localhost:5000'
+  writeKey: 'ly8bRUzEA'
 });
 
 var Widget = require('nps-widget');
