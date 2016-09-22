@@ -1,7 +1,7 @@
 # satismeter-js
 Javascript library for SatisMeter API
 
-_Note: This library is experimental._
+_Note: This library is experimental and not intended for production use._
 
 ## Installation
 
