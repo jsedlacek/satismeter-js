@@ -1,6 +1,6 @@
 {
   "name": "satismeter-js",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Javascript client for SatisMeter API",
   "main": "index.js",
   "scripts": {
